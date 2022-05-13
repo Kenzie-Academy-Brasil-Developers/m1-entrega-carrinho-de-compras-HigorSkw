@@ -62,17 +62,27 @@ for (let i = 0; i < productsCart.length; i++){
     productList.appendChild(ProductItem)
 }
 
-let valorTotal = 0
 
-for (let i = 0; i < productsCart.length; i++){
-    valorTotal += productsCart[i].preco
+function valorFinal ( ) {
+    
+    let valorTotal = 0
+
+    for (let i = 0; i < productsCart.length; i++){
+        valorTotal += productsCart[i].preco
+    }
+    
+    return valorTotal
 }
 
 const productDetails = document.createElement('section')
 
-productDetails.innerHTML = `Total  R$ ${valorTotal}`
+productDetails.innerHTML = `Total  R$ ${valorFinal()}`
 
 main.appendChild(productDetails)
+
+const quebrarLinha = document.createElement('br')
+
+productDetails.appendChild(quebrarLinha)
 
 const buttonEnd = document.createElement('button')
 
